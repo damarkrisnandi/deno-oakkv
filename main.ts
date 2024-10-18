@@ -14,9 +14,10 @@ app.use(
   }),
 );
 
+// logging
 app.use(async (ctx: Context, next) => {
   try {
-    console.log(ctx.request.method , ctx.request.url.href);
+    console.log(ctx.request.method, ctx.request.url.href);
     await next();
     // deno-lint-ignore no-explicit-any
   } catch (err: any) {
