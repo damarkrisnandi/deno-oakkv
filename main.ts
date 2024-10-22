@@ -21,6 +21,7 @@ app.use(async (ctx: Context, next) => {
     await next();
     // deno-lint-ignore no-explicit-any
   } catch (err: any) {
+    console.log(err);
     // You can log error here .. Then handle response
     if (isHttpError(err)) {
       ctx.response.status = err.status;
